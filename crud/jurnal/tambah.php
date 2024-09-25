@@ -3,18 +3,17 @@ include 'config.php'; // File koneksi database
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
-    $id = $_POST['id'];
     $tema = $_POST['tema'];
     $tgl_tema = $_POST['tgl_tema'];
     $isi_tema = $_POST['isi_tema'];
 
-    // Query INSERT menggunakan prepared statement
-    $stmt = $conn->prepare("INSERT INTO jurnal (id, tema, tgl_tema, isi_tema) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("isss", $id, $tema, $tgl_tema, $isi_tema);
+    // Query INSERT menggunakan prepared statement tanpa id
+    $stmt = $conn->prepare("INSERT INTO jurnal (tema, tgl_tema, isi_tema) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $tema, $tgl_tema, $isi_tema);
 
     if ($stmt->execute()) {
         echo "Jurnal berhasil ditambahkan";
-        header("Location: index.php");
+        header("Location: tambah.php");
         exit; // Menghentikan eksekusi setelah redirect
     } else {
         echo "Error: " . $stmt->error;
@@ -23,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>

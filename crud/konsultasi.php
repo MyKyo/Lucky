@@ -46,7 +46,8 @@
             <!-- Pesan akan muncul di sini -->
         </div>
         <input type="text" id="chatInput" class="chat-input" placeholder="Tulis pesan...">
-        <button onclick="sendMessage()">Kirim</button>
+        <br> <br>
+        <button class="button" onclick="sendMessage()">Kirim</button>
     </div>
 
     <script>

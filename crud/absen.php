@@ -9,11 +9,18 @@
  <body>
  <div class="menu">
  <h2>Menu Input Absen Siswa</h2>
- <?php echo date("d/m/Y H:i:s");?>
- <button onclick="inputAbsen('masuk')">Absen Masuk</button><br>
+ <?php
+ date_default_timezone_set('Asia/Jakarta');
+  echo date("d/m/Y H:i:s");?>
+ <br> <br>
+ <button class="button" onclick="inputAbsen('pulang')">Absen Masuk</button>
+
  <br>
- <?php echo date("d/m/Y H:i:s");?>
- <button onclick="inputAbsen('pulang')">Absen Pulang</button>
+ <?php
+ date_default_timezone_set('Asia/Jakarta');
+echo date("d/m/Y H:i:s");?>
+ <br> <br>
+ <button class="button" onclick="inputAbsen('pulang')">Absen Pulang</button>
  </div>
 
  <script>
