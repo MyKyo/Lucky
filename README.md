@@ -1,2 +1,6 @@
 # Lucky
-Make a simple website
+Only simple website with login
+
+Pastikan kamu membuat databasenya 
+
+
