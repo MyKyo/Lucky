@@ -12,7 +12,7 @@
 
 ## Make database
 ```sql
-create database ikan;
+create database tema;
 
 
 
