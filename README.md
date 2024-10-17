@@ -10,7 +10,7 @@
 - **Login**: Simple Protected
 - **Logout**: Logout with simple to jump -> index.php
 
-## Make  Jurnal Database
+## Make  Jurnal Database SQL (localhost)
 ```sql
 create database tema;
 ```
