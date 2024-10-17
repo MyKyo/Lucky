@@ -7,8 +7,8 @@
 
 ## Fitur
 
-- **Login**: Pengguna dapat masuk ke akun mereka dengan mudah.
-- **Logout**: Pengguna dapat keluar dari akun mereka dengan aman.
+- **Login**: Simple Protected
+- **Logout**: Logout with simple to jump -> index.php
 
 
 
