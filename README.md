@@ -10,5 +10,9 @@
 - **Login**: Simple Protected
 - **Logout**: Logout with simple to jump -> index.php
 
+## Make database
+```sql
+create database ikan;
+
 
 
