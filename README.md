@@ -1,6 +1,7 @@
 # Lucky
 
-![Waifu]([https://w.wallhaven.cc/full/zy/wallhaven-zywz7v.jpg])
+![Waifu](https://w.wallhaven.cc/full/zy/wallhaven-zywz7v.jpg)
+
 
 
 **Lucky** Simple And Ya Just Simple.
