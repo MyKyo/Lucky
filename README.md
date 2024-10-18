@@ -11,12 +11,12 @@
 
 ## Setting Up the Jurnal Database (localhost)
 
-1. **Install XAMPP** (if you don't have it):
-   - Download from the [XAMPP website](https://www.apachefriends.org/download.html).
+| Software | Link |
+|----------|------|
+| XAMPP    | [Download XAMPP](https://www.apachefriends.org/download.html) |
 
 2. **Access phpMyAdmin**:
    - Navigate to [phpMyAdmin](http://localhost/phpmyadmin/).
-
 3. **Create Database**:
    Run the following SQL command to create a new database:
    ```sql
@@ -30,4 +30,4 @@
     tema VARCHAR(255) NOT NULL,
     tgl_tema DATE NOT NULL,
     isi_tema TEXT NOT NULL
-); ```
+   );
