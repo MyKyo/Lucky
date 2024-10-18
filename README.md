@@ -11,6 +11,8 @@
 
 ## Setting Up the Jurnal Database (localhost)
 
+1. **Install XAMPP** (if you don't have it):
+
 | Software | Link |
 |----------|------|
 | XAMPP    | [Download XAMPP](https://www.apachefriends.org/download.html) |
