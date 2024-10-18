@@ -12,6 +12,8 @@
 - **Logout**: Logout with simple to jump -> index.php
 
 ## Make  Jurnal Database SQL (localhost)
+- Localhost Download if you dont have ![XAMPP](https://www.apachefriends.org/download.html)
+- Go to ![PHPADMIN](http://localhost/phpmyadmin/)
 ```sql
 create database tema;
 ```
