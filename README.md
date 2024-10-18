@@ -25,8 +25,7 @@
    Run the following SQL command to create a new database:
    
    ```sql
-   CREATE DATABASE tema;```
-   
+   CREATE DATABASE tema;
    
 5. **Create Table**:
 
