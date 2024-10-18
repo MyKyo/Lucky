@@ -1,6 +1,6 @@
 # Lucky
 
-![Waifu](https://w.wallhaven.cc/full/zy/wallhaven-zywz7v.jpg)
+![Waifu](https://i.pinimg.com/736x/a1/51/1b/a1511b5885428f8e6331fad46f8e8213.jpg)
 
 
 
