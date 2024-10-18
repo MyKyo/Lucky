@@ -29,8 +29,7 @@
    
    
 5. **Create Table**:
-   
-   Copy this
+
    
    ```sql
    CREATE TABLE jurnal (
