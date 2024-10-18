@@ -1,3 +1,3 @@
 <footer>
- <p>SMEKDA Coding - Design By MyKyo</p>
+ <p>unfinished project</p>
 </footer>
