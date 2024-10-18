@@ -20,13 +20,14 @@
 3. **Create Database**:
    Run the following SQL command to create a new database:
    ```sql
-   CREATE DATABASE tema;
+   CREATE DATABASE tema;```
    
 4. **Create Table**:
    Copy this
+   ```sql
    CREATE TABLE jurnal (
     id INT AUTO_INCREMENT PRIMARY KEY,
     tema VARCHAR(255) NOT NULL,
     tgl_tema DATE NOT NULL,
     isi_tema TEXT NOT NULL
-);
+); ```
