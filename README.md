@@ -12,20 +12,26 @@
 ## Setting Up the Jurnal Database (localhost)
 
 1. **Install XAMPP** (if you don't have it):
+   
 
-| Software | Link |
-|----------|------|
-| XAMPP    | [Download XAMPP](https://www.apachefriends.org/download.html) |
+      | Software | Link |
+      |----------|------|
+      | XAMPP    | [Download XAMPP](https://www.apachefriends.org/download.html) |
+
 
 2. **Access phpMyAdmin**:
    - Navigate to [phpMyAdmin](http://localhost/phpmyadmin/).
 3. **Create Database**:
    Run the following SQL command to create a new database:
+   
    ```sql
    CREATE DATABASE tema;```
    
-4. **Create Table**:
+   
+5. **Create Table**:
+   
    Copy this
+   
    ```sql
    CREATE TABLE jurnal (
     id INT AUTO_INCREMENT PRIMARY KEY,
