@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input[type="submit"] {
-            background-color: #5cb85c;
+            background-color: #292D83;
             color: white;
             padding: 10px;
             border: none;
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input[type="submit"]:hover {
-            background-color: #4cae4c;
+            background-color: #292D83;
         }
 
         textarea {

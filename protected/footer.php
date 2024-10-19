@@ -1,3 +1,3 @@
 <footer>
- <p>unfinished project</p>
+ <p>Unfinished Project</p>
 </footer>

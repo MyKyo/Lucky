@@ -1,6 +1,4 @@
 <?php
-session_start(); // Mulai sesi
-
 $host = 'localhost';
 $db = 'user_login';
 $user = 'root';
@@ -12,39 +10,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
+    $existingUser = $stmt->fetch();
 
-    if ($user && password_verify($password, $user['password'])) {
-        // Set session variables
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $user['username'];
-        
-
-        header('Location: protected/index.php');
-        exit;
+    if ($existingUser) {
+        echo "Username sudah terdaftar, silakan pilih username lain.";
     } else {
-        echo "Username atau password salah!";
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
+        $stmt->execute(['username' => $username, 'password' => $hashed_password]);
+        echo "Registrasi berhasil!";
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <form method="post">
-        <h2>Login</h2>
-       
+    <form method="POST">
+        <h2>Register</h2>
         <div class="input-container">
             <input type="text" name="username" id="username" required>
             <label for="username">USERNAME</label>
@@ -55,11 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="password">PASSWORD</label>
         </div>
 
-        <input type="submit" value="LOGIN">
+        <input type="submit" value="REGISTER">
 
-        <a href="register.php" class="link">REGISTER</a>
+        <a href="index.php" class="link">LOGIN</a>
     </form>
-
 </body>
 
 </html>
