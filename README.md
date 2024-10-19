@@ -27,7 +27,7 @@
    ```sql
    CREATE DATABASE tema;
    
-5. **Create Table**:
+5. **Create Table (tema)**:
 
    
    ```sql
@@ -37,3 +37,21 @@
     tgl_tema DATE NOT NULL,
     isi_tema TEXT NOT NULL
    );
+
+6. **Create Database Login**
+   
+   
+   ```sql
+   CREATE DATABASE user_login;
+   USE user_login;
+8. **Create Table (user)**
+   
+   
+   ```sql
+   CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+   );
+
