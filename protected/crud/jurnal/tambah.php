@@ -1,15 +1,46 @@
 <?php
 include 'config.php'; // File koneksi database
 
+// Pastikan session sudah dimulai dan ada variabel username
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ambil data dari form
     $tema = $_POST['tema'];
     $tgl_tema = $_POST['tgl_tema'];
     $isi_tema = $_POST['isi_tema'];
 
+    // Ambil username dari sesi
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : 'Unknown'; // Gunakan 'Unknown' jika tidak ada sesi username
+
+    // Proses upload foto
+    $foto = $_FILES['foto'];
+    $fotoPath = '';
+
+    if ($foto['error'] === UPLOAD_ERR_OK) {
+        $targetDir = "uploads/"; // Tentukan direktori untuk menyimpan foto
+        if (!is_dir($targetDir)) {
+            mkdir($targetDir, 0777, true); // Buat folder jika belum ada
+        }
+
+        $fotoName = basename($foto['name']);
+        $fotoPath = $targetDir . uniqid() . "_" . $fotoName; // Nama file unik
+
+        // Periksa dan pindahkan file yang diupload
+        if (move_uploaded_file($foto['tmp_name'], $fotoPath)) {
+            // Jika berhasil, simpan path-nya
+            echo "Foto berhasil diunggah.<br>";
+        } else {
+            echo "Gagal mengunggah foto.<br>";
+            $fotoPath = ''; // Kosongkan jika gagal
+        }
+    } else {
+        echo "Tidak ada foto yang diunggah.<br>";
+    }
+
     // Query INSERT menggunakan prepared statement tanpa id
-    $stmt = $conn->prepare("INSERT INTO jurnal (tema, tgl_tema, isi_tema) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $tema, $tgl_tema, $isi_tema);
+    $stmt = $conn->prepare("INSERT INTO jurnal (tema, tgl_tema, isi_tema, foto, username) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $tema, $tgl_tema, $isi_tema, $fotoPath, $username);
 
     if ($stmt->execute()) {
         echo "Jurnal berhasil ditambahkan";
@@ -23,9 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Tambah Jurnal</title>
     <style>
@@ -85,23 +116,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         textarea {
             height: 100px;
-            resize: vertical; /* Allows vertical resizing only */
+            resize: vertical;
         }
     </style>
 </head>
+
 <body>
     <h2>Tambah Jurnal</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="id">ID:</label>
-        <input type="text" name="id" required><br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" enctype="multipart/form-data">
         <label for="tema">Tema:</label>
         <input type="text" name="tema" required><br>
         <label for="tgl_tema">Tanggal Tema:</label>
         <input type="date" name="tgl_tema" required><br>
         <label for="isi_tema">Isi Tema:</label>
         <textarea name="isi_tema" required></textarea><br>
+        <label for="foto">Upload Foto:</label>
+        <input type="file" name="foto" id="foto"><br> <br>
         <input type="submit" value="Simpan"> <br> <br>
         <a href="index.php">Admin : Edit/Delete</a>
     </form>
 </body>
+
 </html>

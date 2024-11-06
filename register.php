@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'user_login';
+$db = 'tema';
 $user = 'root';
 $pass = '';
 
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    
+
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $username]);
     $existingUser = $stmt->fetch();

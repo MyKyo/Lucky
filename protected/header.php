@@ -1,3 +1,3 @@
 <header>
-<h1>Welcome to Project Ikan</h1>
+    <h1>WELCOME TO SMK 2 PDANG PANJANG</h1>
 </header>

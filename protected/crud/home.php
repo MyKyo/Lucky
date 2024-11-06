@@ -11,7 +11,7 @@
 
 <body>
     <div class="chat-container">
-        <h2>Welcome to Project Ikan</h2>
+        <h2>WELCOME TO SMK 2 PADANG PANJANG</h2>
         <p>Sistem informasi PKL ini digunakan sebagai media konsultasi
             atau pembimbingan
             bagi siswa kepada guru pembimbing disekolah. Silahkan ananda
